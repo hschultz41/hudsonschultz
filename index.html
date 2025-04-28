@@ -14,6 +14,7 @@
             text-align: center;
             background-color: #f4f4f4;
             padding: 50px;
+            transition: background-color 0.5s, color 0.5s;
         }
         img {
             width: 150px;
@@ -28,19 +29,27 @@
             margin-bottom: 30px;
             color: #555;
         }
-        a {
+        .button-group {
+            margin: 20px 0;
+        }
+        a, button.toggle-button {
             display: inline-block;
             margin: 10px;
             text-decoration: none;
             color: white;
-            background-color: #007bff; /* GitHub button color */
+            background-color: #007bff;
             padding: 10px 20px;
             border-radius: 5px;
             font-size: 1em;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
+            border: none;
+            cursor: pointer;
         }
         a:nth-of-type(2) {
             background-color: #0077b5; /* LinkedIn blue */
+        }
+        a:hover, button.toggle-button:hover {
+            transform: scale(1.05);
         }
         a:hover {
             background-color: #0056b3; /* GitHub hover */
@@ -48,13 +57,41 @@
         a:nth-of-type(2):hover {
             background-color: #005582; /* LinkedIn hover */
         }
-        i {
-            margin-right: 8px; /* Space between icon and text */
+        button.toggle-button {
+            background-color: #444;
+        }
+        button.toggle-button:hover {
+            background-color: #222;
         }
         footer {
             margin-top: 50px;
             font-size: 0.8em;
             color: #666;
+        }
+
+        /* Dark Mode */
+        .dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .dark-mode a {
+            background-color: #333;
+        }
+        .dark-mode a:nth-of-type(2) {
+            background-color: #005582;
+        }
+        .dark-mode a:hover {
+            background-color: #555;
+        }
+        .dark-mode a:nth-of-type(2):hover {
+            background-color: #003f5c;
+        }
+        .dark-mode button.toggle-button {
+            background-color: #bbb;
+            color: black;
+        }
+        .dark-mode button.toggle-button:hover {
+            background-color: #999;
         }
     </style>
 </head>
@@ -63,25 +100,45 @@
 
     <!-- Profile Picture -->
     <img src="https://media.licdn.com/dms/image/v2/D4D03AQGesaaVxxGs4Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1673898224972?e=1751500800&v=beta&t=AEDOZghjl9YP6zZZtJ2qnm_BPYmqZpoDnyMyBkToO1Q" alt="Profile Picture">
-
     <!-- Name and About -->
     <h1>Hello, I'm Hudson!</h1>
     <p>Welcome to my personal website, I'm currently a student at Stanford!</p>
 
     <!-- Buttons -->
-    <a href="https://github.com/hschultz41" target="_blank">
-        <i class="fab fa-github"></i> Visit my GitHub
-    </a>
+    <div class="button-group">
+        <a href="https://github.com/hschultz41" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+        </a>
 
-    <a href="https://www.linkedin.com/in/hudson-schultz-998619262/" target="_blank">
-        <i class="fab fa-linkedin"></i> Visit my LinkedIn
-    </a>
+        <a href="https://www.linkedin.com/in/hudson-schultz-998619262/" target="_blank">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+
+        <button class="toggle-button" onclick="toggleDarkMode()">
+            🌙 Toggle Dark Mode
+        </button>
+    </div>
 
     <!-- Footer -->
     <footer>
         &copy; 2025 Hudson Schultz. All rights reserved.
     </footer>
 
+    <!-- JavaScript for Dark Mode -->
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            const toggleButton = document.querySelector('.toggle-button');
+            body.classList.toggle('dark-mode');
+            
+            // Change button text depending on mode
+            if (body.classList.contains('dark-mode')) {
+                toggleButton.innerHTML = "☀️ Toggle Light Mode";
+            } else {
+                toggleButton.innerHTML = "🌙 Toggle Dark Mode";
+            }
+        }
+    </script>
+
 </body>
 </html>
-
