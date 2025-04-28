@@ -4,27 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to My Website</title>
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #fcfcfc;
+            background-color: #f4f4f4;
             padding: 50px;
+        }
+        img {
+            width: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
         }
         h1 {
             color: #333;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 30px;
+            color: #555;
         }
         a {
             display: inline-block;
-            margin-top: 20px;
+            margin: 10px;
             text-decoration: none;
             color: white;
-            background-color: #007bff;
+            background-color: #007bff; /* GitHub button color */
             padding: 10px 20px;
             border-radius: 5px;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        a:nth-of-type(2) {
+            background-color: #0077b5; /* LinkedIn blue */
         }
         a:hover {
-            background-color: #0056b3;
+            background-color: #0056b3; /* GitHub hover */
+        }
+        a:nth-of-type(2):hover {
+            background-color: #005582; /* LinkedIn hover */
+        }
+        i {
+            margin-right: 8px; /* Space between icon and text */
         }
         footer {
             margin-top: 50px;
@@ -33,12 +58,26 @@
         }
     </style>
 </head>
+
 <body>
 
-    <h1>Hello, I'm Hudson!</h1>
-    <p>Welcome to my personal website. I'm currently a student at Stanford!</p>
-    <a href="https://github.com/hschultz41" target="_blank">Visit my GitHub</a>
+    <!-- Profile Picture -->
+    <img src="https://media.licdn.com/dms/image/v2/D4D03AQGesaaVxxGs4Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1673898224972?e=1751500800&v=beta&t=AEDOZghjl9YP6zZZtJ2qnm_BPYmqZpoDnyMyBkToO1Q" alt="Profile Picture">
 
+    <!-- Name and About -->
+    <h1>Hello, I'm Hudson!</h1>
+    <p>Welcome to my personal website, I'm currently a student at Stanford!</p>
+
+    <!-- Buttons -->
+    <a href="https://github.com/hschultz41" target="_blank">
+        <i class="fab fa-github"></i> Visit my GitHub
+    </a>
+
+    <a href="https://www.linkedin.com/in/hudson-schultz-998619262/" target="_blank">
+        <i class="fab fa-linkedin"></i> Visit my LinkedIn
+    </a>
+
+    <!-- Footer -->
     <footer>
         &copy; 2025 Hudson Schultz. All rights reserved.
     </footer>
