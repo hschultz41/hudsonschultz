@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My Website</title>
-
+    <title>Hudson's Website</title>
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -93,6 +91,34 @@
         .dark-mode button.toggle-button:hover {
             background-color: #999;
         }
+        
+        form {
+    margin-top: 30px;
+}
+
+input, textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #218838;
+}
+
     </style>
 </head>
 
@@ -118,7 +144,23 @@
             🌙 
         </button>
     </div>
-
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/f/mzzrddkb" method="POST" id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required><br><br>
+        <input type="email" name="email" placeholder="Your Email" required><br><br>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea><br><br>
+        <button type="submit">Send Message</button>
+    </form>
+    
+    <div id="confirmation" style="display:none; margin-top:20px; color:green;">
+        Thank you! Your message has been sent.
+    </div>
+    
+    <div id="sending" style="display:none; margin-top:20px; color:blue;">
+        Sending your message...
+    </div>
+    
+    
     <!-- Footer -->
     <footer>
         &copy; 2025 Hudson Schultz. All rights reserved.
